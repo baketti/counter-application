@@ -1,0 +1,127 @@
+/* ONLY MEDIA QUERIES */
+@media (max-width: 550px) {
+    .async-button .pushable {
+        max-width: 40%;
+    }
+    .async-button .front {
+        text-align: center;
+        font-size: 0.7rem;
+    }
+    .async-button input[type="number"]{
+        max-width: 25%;
+    }
+    .counters .counter .async-button .pushable {
+        max-width: 40%;
+    }
+    .counters .counter .async-button .front {
+        text-align: center;
+        font-size: 0.7rem;
+    }
+    .counters .counter .async-button input[type="number"]{
+        max-width: 25%;
+    }
+    .count span{
+        font-size: 40px;
+    }
+    .mode{
+        width:90%
+    }
+    
+    #rulesDialog {
+        width: 100%;
+        height: 100vh;
+    }
+
+    #rulesDialog div label p{ 
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 660px){
+    #rulesDialog div label{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 800px) {
+    .counters .counter {
+        width: 80%;
+    }
+    .count {
+        font-size: 60px;
+    }
+    .counters .async-button .pushable {
+        max-width: 40%;
+    }
+    .counters .async-button .front {
+        text-align: center;
+        font-size: 0.7rem;
+    }
+    .counters .async-button input[type="number"]{
+        max-width: 25%;
+    }
+}
+
+@media (max-width: 900px) {
+    .counters .counter {
+        height: 350px;
+    }
+    .count {
+        font-size: 70px;
+    }
+    .counters .async-button .pushable {
+        max-width: 40%;
+    }
+    .counters .async-button .front {
+        text-align: center;
+        font-size: 0.7rem;
+    }
+    .counters .async-button input[type="number"]{
+        max-width: 25%;
+    }
+    #rulesDialog {
+        width: 90%;
+        height: 70vh;
+    }
+}
+
+@media (max-width: 960px) {
+    .counters .async-button .pushable {
+        max-width: 45%;
+    }
+    .counters .async-button .front {
+        text-align: center;
+        font-size: 0.7rem;
+    }
+    .counters .async-button input[type="number"]{
+        max-width: 30%;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    ul {
+        flex-direction: row;
+    }
+    #rulesDialog {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1100px){
+    .count {
+        font-size: 60px;
+    }
+    .counters .async-button .pushable {
+        max-width: 40%;
+    }
+    .counters .async-button .front {
+        text-align: center;
+        font-size: 0.7rem;
+    }
+    .counters .async-button input[type="number"]{
+        max-width: 25%;
+    }    
+    #rulesDialog {
+        font-size: 13px;
+    }
+}

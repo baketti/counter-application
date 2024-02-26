@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Application</title>
+    <link rel="stylesheet" href="./css/counters.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/table-results.css">
+    <link rel="stylesheet" href="./css/buttons.css">
+    <link rel="stylesheet" href="./css/dialog.css">
+    <link rel="stylesheet" href="./css/info-sidebox.css">
+    <link rel="stylesheet" href="./css/media-queries.css">
+    <link rel="stylesheet" href="./css/mode.css">
+    <link rel="stylesheet" href="./css/timer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="./js/HTMLCounterElement.js" defer></script>
+    <script src="./js/globals.js" defer></script>
+    <script src="./js/Counter.js" defer></script>
+    <script src="./js/functions.js" defer></script>
+    <script src="./js/single-counter.js" defer></script>
+    <script src="./js/multiple-counters.js" defer></script>
+    <script src="./js/input-handler.js" defer></script>
+    <script src="./js/timer-handler.js" defer></script>
+    <script src="./js/ui-handlers.js" defer></script>
+    <script src="./js/dialogs-handlers.js" defer></script>
+    <script src="./js/info-sidebox.js" defer></script>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav>
+        <ul>
+            <li class="hovered" id="list-icon-btn" hidden>
+                <i class="fa-solid fa-list"></i>
+            </li>
+            <li class="hovered" id="rules-icon-btn">
+                <i class="fa-solid fa-circle-question"></i>
+            </li>
+            <li class="hovered" id="settings-icon-btn">
+                <i class="fa-solid fa-gear"></i>
+            </li>
+            <li class="hovered" id="reset-icon-btn" hidden>
+                <i class="fa-solid fa-arrows-rotate" id="showResetDialog"></i>
+            </li>
+            <li class="hovered" id="info-icon-btn">
+                <i class="fa-solid fa-circle-info"></i>
+            </li>
+        </ul>
+    </nav>
+    <!-- END NAVBAR -->
+
+    <!-- SETTINGS DIALOG -->
+    <dialog id="settingsDialog" class="dialogs">
+        <form class="dialog-form">
+            <div class="form-content">
+                <label>
+                    <span>Mode:</span>
+                    <select id="modeSelect">
+                        <option name="mode" value="">Choose…</option>
+                        <option>Single</option>
+                        <option>Multiple</option>
+                    </select>
+                </label>
+                <label>
+                    <span>Shopping:</span>
+                    <input id="shopping" type="checkbox" value="shopping" name="shopping"/>
+                </label>
+                <label>
+                    <span>Timer:</span>
+                    <input id="timer" type="checkbox" value="timer" name="timer"/>
+                </label>
+                <label for="setTimer" id="setTimerLabel">
+                    <span>Minutes:</span> 
+                    <input id="setTimer" type="number" min="0" max="10" placeholder="Min">
+                </label>
+            </div>
+            <div class="form-buttons">
+                <button value="cancel" formmethod="dialog">Cancel</button>
+                <button id="confirmBtn">Confirm</button>
+            </div>
+            <output></output>
+        </form>
+    </dialog>
+    <!-- END SETTINGS DIALOG -->
+
+    <!-- RULES DIALOG -->
+    <dialog id="rulesDialog" class="dialogs">
+        <form class="dialog-form">
+            <div class="form-content">
+                <label>
+                    <span>Rules:</span>
+                    <br>
+                    <p>1.The maximum limit of the counter is 7 digits.</p>
+                    <p>2. You can choose single or multi counter mode by clicking
+                        icons above counters or editing settings. </p>
+                    <p>3.You can increment the counter asynchronously at a maximum interval of 10 seconds, 
+                        and the value to increment is a maximum of 5 digits.</p>
+                    <p>4. If you choose the shopping mode, the counter cannot 
+                        go below zero, and if you have any negative count, it will become zero.</p>
+                    <p>5. You can use a timer and set its duration up to a maximum of 10 minutes.</p>
+                    <p>6. While the timer is active, you cannot change modes.</p>
+                    <p>7. If you're using the timer, you cannot enter shopping 
+                        mode because while you're shopping, you shouldn't be rushed, relax and do your shopping!</p>
+                    <br>
+                </label>
+            </div>
+            <div class="form-buttons">
+                <button value="cancel" formmethod="dialog" id="closeRulesDialog">
+                    <i class="fa-regular fa-thumbs-up"></i>
+                </button>
+            </div>
+            <output></output>
+        </form>
+    </dialog>
+    <!-- END RULES DIALOG -->
+
+    <!-- RESET DIALOG SHOWN ON MULTIPLE MODE -->
+    <dialog id="resetDialog" class="dialogs">
+        <form class="dialog-form">
+            <div class="form-content">
+                <label>
+                    Are you sure you want to reset all counters?
+                </label>
+                <label id="removeSpan">
+                    <span>Remove all counters</span>
+                    <input type="checkbox" id="removeAllCounters" value="remove" name="remove"/>
+                </label>
+            </div>
+            <div class="form-buttons">
+                <button value="cancel" formmethod="dialog">Cancel</button>
+                <button id="confirm-btn">Confirm</button>
+            </div>
+            <output></output>
+        </form>
+    </dialog>
+    <!-- END RESET DIALOG SHOWN ON MULTIPLE MODE -->
+
+    <!-- DIALOG SHOWN AT THE END OF THE TIMER -->
+    <dialog id="timerEndedDialog" class="dialogs">
+        <form class="dialog-form">
+            <div class="form-content">
+                <label id="timer-ended">Timer ended!</label>
+                <label id="timer-label-results">
+                    Watch the results <i class="fa-solid fa-list list-icon-btn"></i>
+                </label>
+            </div>
+            <div class="form-buttons">
+                <button value="cancel" formmethod="dialog" id="closeTimerDialog">
+                    <i class="fa-regular fa-thumbs-up"></i>
+                </button>
+            </div>
+            <output></output>
+        </form>
+    </dialog>
+     <!-- END DIALOG SHOWN AT THE END OF THE TIMER -->
+    <main>
+        <!-- MODE && TIMER CONTAINER -->
+        <section class="mode">
+            <!-- mode -->
+            <div class="single-mode" title="Single mode"></div>
+            <div class="multiple-mode" title="Multiple mode">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <!--  END mode -->
+            <!-- timer -->
+            <div class="timer-container">
+                <i class="fa-solid fa-xmark" id="closeTimer"></i>
+                <div class="timer"></div>
+                <div class="timer-buttons">
+                    <input type="checkbox" id="stopTimer">
+                    <input type="checkbox" id="startTimer">
+                    <i class="fa-solid fa-arrow-rotate-right" id="resetTimer"></i>
+                </div>
+            </div>
+            <!-- END timer -->
+        </section>
+        <!-- MODE && TIMER CONTAINER -->
+
+        <!-- SINGLE COUNTER SECTION -->
+        <section class="single-counter">
+            <section class="single">
+                <i class="fa-solid fa-ellipsis-vertical settings"></i>
+                <div class="settings-container" hidden>
+                    <label for="setCounter">
+                        <span>Set Counter To:</span> 
+                        <input id="setCounter" type="number" max="10000" placeholder="Value">
+                    </label>
+                    <label for="resetCounter">
+                        <span>Reset Counter</span>
+                        <i class="fa-solid fa-arrow-rotate-left" id="resetCounter" data-action="reset"></i>
+                    </label>
+                </div>
+                <div class="core-counter">
+                    <div class="btn-container" data-action="decrement">
+                        <button class="pushable" title="Click me">
+                            <span class="shadow"></span>
+                            <span class="edge"></span>
+                            <span class="front">
+                                <i class="fa-solid fa-minus"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <h1 class="count">
+                        <span class="symbol"></span><span></span><span class="number">0</span>
+                    </h1>
+                    <div class="btn-container" data-action="increment">
+                        <button class="pushable" title="Click me">
+                            <span class="shadow"></span>
+                            <span class="edge"></span>
+                            <span class="front">
+                                <i class="fa-solid fa-plus"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="async-button">
+                    <div class="async-button-cont">
+                        <label for="addIt-async">
+                            <input type="number" id="addIt-async" max="10000" placeholder="Value">
+                        </label>
+                        <button class="pushable" data-action="add-async">
+                            <span class="shadow"></span>
+                            <span class="edge"></span>
+                            <span class="front">Asynchronous</span>
+                        </button>
+                        <label for="async-sec">
+                            <input type="number" id="async-sec" min="0" max="10" placeholder="Seconds">
+                        </label>
+                        <div id="progressBar" class="progress-bar">
+                            <div id="bar" class="bar">0%</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <!-- END SINGLE COUNTER SECTION -->
+
+        <!-- RESULTS TABLE -->
+        <section class="results">
+            <div class="results-header">
+                <h2 id="resultsTitle">Counters results</h2>
+                <i class="fa-solid fa-times" id="close-list-icon"></i>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th data-type="string">
+                            <i class="fa-solid fa-arrow-up"></i>
+                            <span>Name</span>
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </th>
+                        <th data-type="number">
+                            <i class="fa-solid fa-arrow-up"></i>
+                            <span>Value</span>
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div class="total-result" hidden>Total price: $<span id="totalPrice"></span></div>
+        </section>
+        <!-- END RESULTS TABLE -->
+        
+        <!-- MULTIPLE COUNTER SECTION -->
+        <section class="counters">
+            <section class="counter" id="addNewCounter">
+                <div id="plus-icon">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div>
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+                <h3>Add New Counter</h3>
+            </section>
+        </section>
+        <!-- END MULTIPLE COUNTER SECTION -->
+    </main>
+    <!-- INFO SIDEBOX IN THE RIGHT TOP CORNER -->
+    <section id="info-sidebox">
+        <div id="info">
+          <h2 class="logo">Info <i class="fa-solid fa-circle-info"></i></h2>
+          <p class="author">Coded By <span>Emanuele G. Bachetti</span> </p>
+          <div class="items">
+           <!--  <i class="fa-solid fa-eye"></i> -->
+            <a href="" target="_blank" rel="noopener" class="item">
+              <p>Source code</p>
+            </a>
+            <i class="fa-brands fa-github"></i>
+          </div>
+          <div class="closer">
+            <i class="fa-solid fa-times"></i>
+          </div>
+        </div>
+    </section>
+    <!-- END INFO SIDEBOX IN THE RIGHT TOP CORNER -->
+    <footer>
+        <p>&copy; 2024</p>
+    </footer>
+</body>
+</html>
