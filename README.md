@@ -2,7 +2,7 @@
 It's a simple counter application to count and keep track of everything you need.
 
 # About the Project
-This project is more than just a simple counter; it serves as a tool to track various activities. It features both a single counter mode and a multiple counter mode, allowing users to manage multiple counts simultaneously, displayed in a leaderboard-like fashion. Additionally, users can utilize a timer and switch to shopping mode, enhancing its versatility.
+This project is more than just a simple counter; it serves as a tool to track various activities. It features both a single counter mode and a multiple counter mode, allowing users to manage multiple counts simultaneously, displayed in a leaderboard-like fashion. Additionally, users can utilize a timer or switch to shopping mode, enhancing its versatility.
 
 # Built With
 HTML, CSS, JavaScript, Font Awesome Icons
