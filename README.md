@@ -1,16 +1,16 @@
 # counter-application
 It's a simple counter application to count and keep track of everything you need.
 
-About the Project
+# About the Project
 This project is more than just a simple counter; it serves as a tool to track various activities. It features both a single counter mode and a multiple counter mode, allowing users to manage multiple counts simultaneously, displayed in a leaderboard-like fashion. Additionally, users can utilize a timer and switch to shopping mode, enhancing its versatility.
 
-Built With
+# Built With
 HTML, CSS, JavaScript
 Font Awesome Icons
 Getting Started
 No special installations or configurations are required to use this project since it's implemented solely with HTML, CSS, and JavaScript.
 
-Usage
+# Usage
 To utilize this tool effectively, follow these guidelines:
 
 Single or Multi-Counter Mode: Switch between single or multiple counter mode by clicking the icons above the counters or adjusting settings.
