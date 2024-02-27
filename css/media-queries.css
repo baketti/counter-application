@@ -26,7 +26,6 @@
     .mode{
         width:90%
     }
-    
     #rulesDialog {
         width: 100%;
         height: 100vh;
@@ -34,6 +33,14 @@
 
     #rulesDialog div label p{ 
         font-size: 10px;
+    }
+    .results {
+        width: 220px;
+        font-size: smaller;
+    }
+    .results td {
+        max-width: 70px;
+        overflow: hidden;
     }
 }
 

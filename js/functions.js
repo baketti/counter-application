@@ -44,8 +44,8 @@ function toggleTableResults() {
 }
 /* FUNCTION TO CHANGE FROM MULTIPLE TO SINGLE MODE */
 function switchToSingleMode(){
-    if (main.contains(countersSection)) {
-        main.removeChild(countersSection);
+    if (main.contains(counters_container)) {
+        main.removeChild(counters_container);
         listIcon.hidden = !listIcon.hidden;
         resetIcon.hidden = !resetIcon.hidden;
         multipleCountersMode = false;
@@ -55,16 +55,17 @@ function switchToSingleMode(){
 /* FUNCTION TO CHANGE FROM SINGLE TO MULTIPLE MODE */
 function switchToMultiMode(){
     if (main.contains(singleCounterSection)) {
+        main.removeChild(singleCounterSection);
         listIcon.hidden = !listIcon.hidden;
         resetIcon.hidden = !resetIcon.hidden;
-        main.removeChild(singleCounterSection);
         multipleCountersMode = true;
-    }
+    };
+    //this check is to ensure that the multiple mode UI is how it should be
     if(Counter.counters.length === 0){
         renderingCounter();
-    }
-    main.appendChild(countersSection);
-}
+    };
+    main.appendChild(counters_container);
+};
 /* FUNCTION TO UPDATE/REMOVE THE SHOPPING MODE OF ALL COUNTERS */
 function updateCountersMode () {
     const resultTitle = document.getElementById("resultsTitle");
@@ -81,10 +82,10 @@ function updateCountersMode () {
         symbol.textContent = Counter.shoppingMode ? "$" : "";
         counter.count = Counter.shoppingMode && counter.count < 0 ? 0 : counter.count;
         number.textContent = counter.count;
-    }
+    };
     const total_count = Counter.getTotalCount();
     total_span.textContent = total_count;
-}
+};
 /* --------------------------------- 
         PROGRESS BAR LOGIC
 --------------------------------- */
@@ -104,22 +105,21 @@ function move(bar,time) {
                 bar.style.width = "0%";
                 bar.innerHTML = "0%";
                 i = 0;
-            } else {
+            }else {
                 width++;
                 bar.style.width = width + "%";
                 bar.innerHTML = width  + "%";
-            }
-        }
-    }
-}
-/* -------------------------------------------- */
+            };
+        };
+    };
+};
 /* -----------------------
     TIMER FUNCTIONS
 ------------------------- */
 function runTimer() {
     const label_results = document.getElementById('timer-label-results');
     if (sec == 0 && min == 0) {
-        clearInterval(timerId)
+        clearInterval(timerId);
         stopTimer.checked = false;
         startTimer.checked = false;
         startTimer.disabled = false;
@@ -130,24 +130,21 @@ function runTimer() {
             label_results.style.display = "flex";
         }else{
             label_results.style.display = "none";
-        }
-    }
-    else if(sec == 0 && min > 0) {
-        min--
-        sec = 59
-    }
-    else{
-        sec--
-    }
+        };
+    }else if(sec == 0 && min > 0) {
+        min--;
+        sec = 59;
+    }else{
+        sec--;
+    };
     time.innerHTML = timerFormatter(min,sec);
-}
+};
 
 function timerFormatter (min,sec) {
     min = min < 10 ? `0${min}` : min;
     sec = sec < 10 ? `0${sec}` : sec;
     return min + " : " + sec;
-}
-/* -------------------------------------------- */
+};
 /* -------------------------------
     FUNCTION FOR TABLE SORTING 
 ----------------------------------*/
@@ -168,5 +165,4 @@ function sortResults(colNum, type, descOrder) {
     }
     descOrder ? rows.sort(compare).reverse() : rows.sort(compare);
     results.append(...rows);
-}
-/* --------------------------------------- */
+};

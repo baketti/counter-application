@@ -1,4 +1,4 @@
-/* THIS IS FOR OPEN OR CLOSE INFO-SIDEBOX BY CLICKING THE INFO ICON */
+/* THIS IS TO OPEN OR CLOSE INFO-SIDEBOX BY CLICKING THE INFO ICON */
 const infoIcon = document.querySelector("#info-icon-btn");
 const infoSidebox = document.querySelector("#info");
 const closer = infoSidebox.querySelector(".closer");
