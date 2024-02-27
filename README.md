@@ -7,7 +7,7 @@ This project is more than just a simple counter; it serves as a tool to track va
 # Built With
 HTML, CSS, JavaScript
 Font Awesome Icons
-Getting Started
+# Getting Started
 No special installations or configurations are required to use this project since it's implemented solely with HTML, CSS, and JavaScript.
 
 # Usage
