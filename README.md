@@ -1,5 +1,6 @@
 # Counter-application
-It's a simple counter application, but not the simplest, to count and keep track of everything you need. A project for Start2Impact University!
+It's a simple counter application, but not the simplest, to count and keep track of everything you need. A project for 
+### Start2Impact University!
 
 # About the Project
 This project is more than just a simple counter; it can serves as a tool to track various activities. It features both a single counter mode and a multiple counter mode, allowing users to manage multiple counts simultaneously, displayed in a leaderboard-like fashion. Additionally, users can utilize a timer or switch to shopping mode, enhancing its versatility. You can try this tool here: https://counthings.netlify.app.
