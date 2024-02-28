@@ -13,20 +13,17 @@ To utilize this tool effectively, follow these guidelines:
 
 ### Single or Multi-Counter Mode:
 Switch between single or multiple (max 15) counter mode by clicking the icons above the counters or adjusting settings.
-
 ### Counters Results: 
-Users can watch all live counts in the leaderboard. It is available only for the multiple mode and it can be opened by clicking list icon on top of the page.
-
+Users can watch all live counts in the leaderboard. It is available only for the multiple mode and it can be opened by clicking list icon on top of the page.ù
+### Counters limit:
+The maximum limit of the counter is 7 digits.
 ### Asynchronous Counter Increment: 
 You can increment the counter asynchronously at a maximum interval of 10 seconds, with the value to increment capped at 5 digits.
-
 ### Shopping Mode: 
 Choose shopping mode to prevent counters from going below zero. Any negative counts will be zero. Shopping mode adds a "$" symbol to counts and displays the total in the results leaderboard.
-
 ### Timer:
 Utilize the timer and set its duration up to a maximum of 10 minutes. While the timer is active, you cannot change modes. To change mode you have to stop or reset it.
-
-###Avoid Shopping Mode During Timer: 
+### Avoid Shopping Mode During Timer: 
 If you're using the timer, you can't enter on shopping mode. Shopping mode is meant for relaxation and uninterrupted shopping experience.
 
 These guidelines ensure optimal use of the application, allowing users to effectively track various activities while maintaining ease of use and flexibility.
