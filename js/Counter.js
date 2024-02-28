@@ -56,6 +56,8 @@ class Counter {
         setTimeout(() => {
             this.setTo(this.count + parseInt(this.asynchronous_value))
             button.disabled = false;
+            this.asynchronous_value = 0;
+            this.asynchronous_time = 0;
             async_value_input.value = "";
             async_time_input.value = "";
         }, timeout);
