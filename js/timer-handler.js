@@ -42,6 +42,7 @@ closeTimer.addEventListener("click", () => {
     timer.style.display = "none";
     setTimerLabel.style.display = "none";
     timerCheckbox.checked = false;
+    shoppingCheckbox.disabled = false;
     stopTimer.checked = false;
     [min,sec] = [undefined,0];
     time.innerHTML = timerFormatter(min,sec);  
