@@ -1,5 +1,5 @@
 class Counter {
-
+    
     element = null;
     name = "";
     count = 0;

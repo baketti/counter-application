@@ -1,3 +1,6 @@
+/*---------------------------------- 
+ CONTAINS ALL APPLICATION FUNCTIONS
+---------------------------------- */
 /* FUNCTION FOR BUILDING AN ENTIRE COUNTER SECTION 
    => IT RETURNS A NEW INSTANCE OF COUNTER CLASS */
 function createNewCounter(){
