@@ -47,12 +47,16 @@ class Counter {
         if(this.asynchronous_value < 0 && Counter.shoppingMode) return;
         const bar = this.element.querySelector(".bar");
         const button = this.element.querySelector(".async-btn");
+        const async_value_input = this.element.querySelector(".addIt-async");
+        const async_time_input = this.element.querySelector(".async-sec");
         const timeout = parseInt(this.asynchronous_time) * 1000;
         move(bar,this.asynchronous_time);
         button.disabled = true;
         setTimeout(() => {
             this.setTo(this.count + parseInt(this.asynchronous_value))
             button.disabled = false;
+            async_value_input.value = "";
+            async_time_input.value = "";
         }, timeout);
     }
     /* METHOD TO UPDATE COUNT */
