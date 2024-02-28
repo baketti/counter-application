@@ -35,6 +35,7 @@ class Counter {
 
     reset () {
         this.count = 0;
+        this.element.querySelector(".setCounter").value = "";
     }
 
     setTo(value) {

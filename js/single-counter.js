@@ -30,8 +30,11 @@ let asyncTime = 0;
         }else if (target.closest('[data-action]')){
         //if the user clicks on the reset icon within intern settings menu or the async button
                 if(target.dataset.action == "reset"){//reset icon
+                    const set_input_field = single_counter.querySelector("#setCounter");
                     //user wants to reset the counter
                     counter.textContent = 0;
+                    //reset the set counter to input field
+                    set_input_field.value = "";
                     return;
                 }
                 //if we are here => it was not the reset icon
