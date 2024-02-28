@@ -14,7 +14,7 @@ To utilize this tool effectively, follow these guidelines:
 ### Single or Multi-Counter Mode:
 Switch between single or multiple (max 15) counter mode by clicking the icons above the counters or adjusting settings.
 ### Counters Results: 
-Users can watch all live counts in the leaderboard. It is available only for the multiple mode and it can be opened by clicking list icon on top of the page.ù
+Users can watch all live counts in the leaderboard. It is available only for the multiple mode and it can be opened by clicking list icon on top of the page.
 ### Counters limit:
 The maximum limit of the counter is 7 digits.
 ### Asynchronous Counter Increment: 
