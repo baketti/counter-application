@@ -91,6 +91,8 @@ confirm_reset_btn.addEventListener("click", (event) => {
         Counter.deleteAll();
         //rendering the initial state
         renderingCounter();
+        //checkbox will be unchecked
+        removeAllCounters.checked = false;
     }
     resetDialog.close()
 });
