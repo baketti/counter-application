@@ -1,6 +1,14 @@
 # Counthings
 It's a simple counter application, but not the simplest, to count and keep track of everything you need. A project for 
-### Start2Impact University!
+### Final exam for Javascript basics of Start2Impact University!
+### Project score and feedback
+## Score: 500/500
+## Feedback:
+Ciao Emanuele,
+Sono Francesco e saró il tuo coach per il corso di Javascript Basics.
+Ho visto il tuo progetto e davvero complimenti! Non tanto per la quantitá e qualitá delle features che hai aggiunto, ma per come le hai implementate.
+
+Ottimo lavoro!
 
 # About the Project
 This project is more than just a simple counter; it can serves as a tool to track various activities. It features both a single counter mode and a multiple counter mode, allowing users to manage multiple counts simultaneously, displayed in a leaderboard-like fashion. Additionally, users can utilize a timer or switch to shopping mode, enhancing its versatility. You can try this tool here: https://counthings.netlify.app.
