@@ -1,6 +1,6 @@
 # Counthings
 It's a simple counter application, but not the simplest, to count and keep track of everything you need. A project for 
-### Final exam for Javascript basics of Start2Impact University!
+### Final exam for Javascript Basics course of Start2Impact University!
 # Project score and feedback from Francesco Borrelli, Senior Software Engineer. Ex Shutterstock
 ## Score: 500/500
 ## Feedback:
