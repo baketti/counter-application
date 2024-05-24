@@ -1,4 +1,4 @@
-# Counter-application
+# Counthings
 It's a simple counter application, but not the simplest, to count and keep track of everything you need. A project for 
 ### Start2Impact University!
 
